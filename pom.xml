@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.dds.phase3</groupId>
+  <artifactId>dds</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+                 		<plugin>
+                  	            <artifactId>maven-compiler-plugin</artifactId>
+                                <version>3.3</version>
+                                <configuration>
+                                        <source>1.8</source>
+                                        <target>1.8</target>
+                                </configuration>
+                        </plugin>
+                        <plugin>
+                                <groupId>org.codehaus.mojo</groupId>
+                                <artifactId>exec-maven-plugin</artifactId>
+                                <version>1.2.1</version>
+                                <configuration>
+                                        <mainClass>DDS</mainClass>
+                                </configuration>
+                        </plugin>
+      				
+    </plugins>
+  </build>
+  <dependencies>
+  	<dependency>		
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-core_2.11</artifactId>
+    <version>2.1.0</version>
+  	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql_2.10 -->
+	<dependency>
+		<groupId>org.apache.spark</groupId>
+		<artifactId>spark-sql_2.10</artifactId>
+		<version>2.1.0</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.datasyslab/geospark -->
+	<dependency>
+		<groupId>org.datasyslab</groupId>
+		<artifactId>geospark</artifactId>
+		<version>0.6.0</version>
+	</dependency>
+	
+	<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-shapefile</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-swing</artifactId>
+            <version>${geotools.version}</version>
+        </dependency>
+
+		<dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+		
+  
+  </dependencies>
+ 
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <geotools.version>2.7-M2</geotools.version>
+  </properties>
+  
+   <repositories>
+   		
+	<repository>
+	<id>geotoolkit</id>
+	<name>Geotoolkit.org project</name>
+	<url>http://maven.geotoolkit.org</url>
+</repository>
+
+
+   
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net repository</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+        <repository>
+            <id>osgeo</id>
+            <name>Open Source Geospatial Foundation Repository</name>
+            <url>http://download.osgeo.org/webdav/geotools/</url>
+        </repository>
+    </repositories>
+</project>
